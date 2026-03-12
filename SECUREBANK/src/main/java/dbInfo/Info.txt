@@ -1,0 +1,3 @@
+username = root
+password = K@r4n
+db_name = securebank
