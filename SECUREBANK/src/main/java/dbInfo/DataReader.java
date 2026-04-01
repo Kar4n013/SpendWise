@@ -8,7 +8,7 @@ import java.util.Properties;
 public class DataReader {
 	public static String[] dataReader() throws FileNotFoundException {
 		FileReader fileReader = new FileReader(
-				"C:\\Users\\Karan Giri\\eclipse-workspace\\Projects\\BankingSystem\\src\\main\\java\\dbInfo\\Info.txt");
+				"C:\\Users\\Karan Giri\\git\\SECUREBANK\\SECUREBANK\\src\\main\\java\\dbInfo\\Info.txt");
 		Properties properties = new Properties();
 		try {
 			properties.load(fileReader);

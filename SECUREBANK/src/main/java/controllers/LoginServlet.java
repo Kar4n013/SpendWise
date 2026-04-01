@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
 			loginPojo.setId(customer_id);
 			loginPojo.setPassword(password);
 			LoginDao loginDao = new LoginDao(loginPojo);
-
+			
 			if (loginDao.verifyLogin()) {
 				response.sendRedirect("DashboardServlet");
 			} else {
@@ -42,7 +42,6 @@ public class LoginServlet extends HttpServlet {
 			request.setAttribute("errorMessage", "Please enter both ID and Password!");
 			request.getRequestDispatcher("/Login.jsp").forward(request, response);
 		}
-		doGet(request, response);
 	}
 
 }

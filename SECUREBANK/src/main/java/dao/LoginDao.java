@@ -17,9 +17,13 @@ public class LoginDao {
 	}
 
 	public boolean verifyLogin() {
+		System.out.println("Verifying");
 		try {
 			PreparedStatement statement = GetConnection.getConnection()
-					.prepareStatement("select customer_name where customer_id = ? and password = SHA(?,256)");
+					.prepareStatement("select name from customer_details where customer_id = ? and password = SHA2(?,256)");
+			System.out.println(loginPojo.getId());
+			System.out.println(loginPojo.getPassword());
+			
 			statement.setInt(1, loginPojo.getId());
 			statement.setString(2, loginPojo.getPassword());
 
@@ -33,8 +37,8 @@ public class LoginDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		System.out.println("Wrong");
 		return false;
 	}
-
+//rahul123
 }
